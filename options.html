@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Reload Split View Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reload Split View Extension Settings</h1>
+      <p class="subtitle">分割ビューの連動リロードに関する設定を行います。</p>
+    </header>
+
+    <main>
+      <!-- Enable/Disable Section -->
+      <section class="settings-card">
+        <h2>機能の有効化</h2>
+        <div class="setting-item toggle-item">
+          <div class="setting-info">
+            <label for="extension-enabled" class="setting-label">連動リロードを有効にする</label>
+            <p class="setting-desc">オフにすると、分割ビューでの連動リロード機能がすべて停止します。</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="extension-enabled">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Modifier Keys Section -->
+      <section class="settings-card">
+        <h2>連動リロードをスキップする修飾キー</h2>
+        <p class="section-desc">以下のチェックされたキーを押しながらリロードした場合は、もう片方のタブをリロードしません（通常のChrome標準の単一リロード挙動になります）。</p>
+        
+        <div class="modifier-list">
+          <label class="checkbox-container">
+            <input type="checkbox" id="mod-shift">
+            <span class="checkmark"></span>
+            <span class="label-text">Shift キー <span class="badge">推奨</span></span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="mod-ctrl">
+            <span class="checkmark"></span>
+            <span class="label-text">Ctrl キー (Control)</span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="mod-alt">
+            <span class="checkmark"></span>
+            <span class="label-text">Alt キー (Option)</span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="mod-meta">
+            <span class="checkmark"></span>
+            <span class="label-text">Meta キー (Command / Windows)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Keyboard Tester Section -->
+      <section class="settings-card">
+        <h2>キーボード動作テスト</h2>
+        <p class="section-desc">修飾キーを押すと、拡張機能が正しくキー入力を認識しているかリアルタイムでテストできます（このページがアクティブな状態でお試しください）。</p>
+        
+        <div class="tester-container">
+          <div class="key-indicator" id="key-shift">Shift</div>
+          <div class="key-indicator" id="key-ctrl">Ctrl</div>
+          <div class="key-indicator" id="key-alt">Alt</div>
+          <div class="key-indicator" id="key-meta">Meta / Cmd</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="save-status">設定は自動的に保存されます。</div>
+    </footer>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

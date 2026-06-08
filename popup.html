@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Reload Split View</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header>
+      <div class="logo-area">
+        <span class="icon-sync">🔄</span>
+        <span class="logo-title">Reload Split View</span>
+      </div>
+      <button id="btn-options" title="設定を開く" class="btn-icon">⚙️</button>
+    </header>
+
+    <main>
+      <!-- Feature Enable Toggle -->
+      <div class="status-row">
+        <span class="status-label">拡張機能の有効状態:</span>
+        <label class="switch">
+          <input type="checkbox" id="extension-toggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Current Split View State -->
+      <div class="state-card">
+        <div class="state-header">現在のタブの状態</div>
+        <div id="split-state-box" class="state-box inactive">
+          <div class="state-icon" id="state-icon">⏸️</div>
+          <div class="state-details">
+            <span id="state-text" class="state-text">判定中...</span>
+            <span id="state-subtext" class="state-subtext">-</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span class="footer-note">修飾キーを押しながらリロードすると、片方リロードが可能です。</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

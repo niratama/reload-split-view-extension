@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Reload Split View Extension",
+  "version": "1.0.0",
+  "description": "分割ビュー（Split View）のタブ連動リロード拡張機能。修飾キーによる連動スキップ機能付き。",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_page": "options.html"
+}
